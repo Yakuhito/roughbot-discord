@@ -141,6 +141,7 @@ async def cmd_createvote(message):
 	global users_that_created_votes
 	global admins
 	global voting_channel
+	await calibrate()
 	msg = message.clean_content
 	if int(time.time()) - admins[message.author.id] < vote_cooldown * 60:
 		await message.channel.send('Please wait 10 minutes before casting anothe vote.')
@@ -168,6 +169,7 @@ async def cmd_ping(message):
 
 async def cmd_vote(message):
 	global votes
+	await calibrate()
 	msg = message.clean_content
 	arr = msg.split(" ")[1:]
 	priv_ch = type(message.channel) is discord.DMChannel
@@ -192,6 +194,7 @@ async def cmd_reveal(message):
 	global votes
 	global voting_channel
 	global users_that_created_votes
+	await_calibrate()
 	msg = message.clean_content
 	if int(time.time()) - admins[message.author.id] < vote_cooldown * 60:
 		return
