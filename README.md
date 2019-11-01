@@ -1,4 +1,4 @@
-                                                           
+
                                                           
       dMMMMb    pMMMMq   nn    nn   pMMMMMq   MM   MM      
       MM  qMb  pMP  qMq  MM    MM  pMP   qMq  MM   MM      
@@ -14,7 +14,7 @@
 
 
 
-==============[  About  ]==============
+==============[  About  ]==============  
 Bot used by the ROUGH community to cast votes on their servers.
 
 
