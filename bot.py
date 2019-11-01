@@ -60,7 +60,7 @@ class Vote:
 		txt += "Vote duration: {}h\n\n\n".format(self.vote_time // (60 * 60))
 		if not self.reveal_vote:
 			txt += self.text
-			txt += "Votes:\n"
+			txt += "\n\n\nVotes:\n"
 			dict = {}
 			for v in self.votes:
 				if dict.get(v[1], -1) == -1:
