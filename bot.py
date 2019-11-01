@@ -118,7 +118,6 @@ async def calibrate():
 		for role in user.roles:
 			if "admin" in role.name.lower():
 				server_admins.append(str(user))
-								
 
 @client.event
 async def on_ready():
@@ -224,19 +223,19 @@ async def on_message(message):
 	if not msg.startswith('/reveal') and not msg.startswith('vote') and not msg.startswith('/createvote') and msg != '/ping' and msg != '/help':
 		return
 	if msg == '/help':
-		cmd_help(message)
+		await cmd_help(message)
 		return
 	if msg == '/ping':
-		cmd_ping(message)
+		await cmd_ping(message)
 		return
 	if msg.startswith('/createvote'):
-		cmd_createvote(message)
+		await cmd_createvote(message)
 		return
 	if msg.startswith('vote'):
-		cmd_vote(message)
+		await cmd_vote(message)
 		return
 	if msg.startswith('/reveal'):
-		cmd_reveal(message)
+		await cmd_reveal(message)
 		return
 
 client.run(token)
