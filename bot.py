@@ -56,21 +56,20 @@ class Vote:
 		self.vote_msg = msg
 
 	def getText(self):
-		txt = "Vote #{}\n".format(self.id)
-		txt += "--------" + "-" * len(str(self.id) * 2) + "\n"
-		txt += "Total vote duration: {}h\n\n".format(self.vote_time // (60 * 60))
+		txt = "Vote number: {}\n".format(self.id)
+		txt += "Vote duration: {}h\n\n\n".format(self.vote_time // (60 * 60))
 		if not self.reveal_vote:
 			txt += self.text
-			txt += "\n\nVotes:\n"
+			txt += "Votes:\n"
 			dict = {}
 			for v in self.votes:
 				if dict.get(v[1], -1) == -1:
 					dict[v[1]] = 0
 				dict[v[1]] += 1
 			for vote_str, num in dict.items():
-				txt += "{} - {} vote(s)\n".format(vote_str, num)
-			txt += "To vote, send the following text to the bot:\n"
-			txt += "/vote {} [your_option]".format(self.id)
+				txt += "{} - {}\n".format(vote_str, num)
+			txt += "\nTo vote, send the following text to the bot:\n"
+			txt += "vote {} da/nu".format(self.id)
 		else:
 			txt += "Reveal vote #{}?\n".format(self.vote_to_reveal)
 			txt += "Vote anything for 'yes', stay silent for no\n"
